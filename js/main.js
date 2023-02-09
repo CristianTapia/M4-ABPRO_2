@@ -11,9 +11,9 @@ function creacionTorneo() {
     let datosTorneo = [];
     for(let i = 0; i < crearTorneo.length; i++) {
         let llenarArreglo = datosTorneo.push(crearTorneo[i].value);
-        let nuevoTorneo = new Torneo(datosTorneo[0], datosTorneo[1], datosTorneo[2], datosTorneo[3]);
-        console.log(nuevoTorneo)
     }
+    let nuevoTorneo = new Torneo(datosTorneo[0], datosTorneo[1], datosTorneo[2], datosTorneo[3]);
+    console.log(nuevoTorneo);
 }
 
 // Agregar equipo
@@ -25,9 +25,10 @@ function inscribirEquipo() {
     let datosEquipo = [];
     for(let i = 0; i < agregarEquipo.length; i++) {
         let llenarArreglo = datosEquipo.push(agregarEquipo[i].value);
-        let nuevoEquipo = new Equipo(datosEquipo[0], datosEquipo[1]);
-        console.log(nuevoEquipo)
+        
     }
+    let nuevoEquipo = new Equipo(datosEquipo[0], datosEquipo[1]);
+    console.log(nuevoEquipo);
 }
 
 // Agregar jugadores
@@ -39,7 +40,7 @@ function inscribirJugador() {
     let datosJugador = [];
     for(let i = 0; i < agregarJugador.length; i++) {
         let llenarArreglo = datosJugador.push(agregarJugador[i].value);
-        let nuevoJugador = new Jugador(datosJugador[0], datosJugador[1], datosJugador[2], datosJugador[3]);
-        console.log(nuevoJugador)
     }
+    let nuevoJugador = new Jugador(datosJugador[0], datosJugador[1], datosJugador[2], datosJugador[3]);
+    console.log(nuevoJugador);
 }
