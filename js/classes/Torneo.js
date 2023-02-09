@@ -3,4 +3,9 @@ export function Torneo(nombre, maxEquipos, minEdad, cantEquipos) {
     this.maxEquipos = maxEquipos;
     this.minEdad = minEdad;
     this.cantEquipos = cantEquipos;
+    this.equipos = [];
+}
+
+Torneo.prototype.anadirEquipo = function (equipo) {
+    return this.equipos.push(equipo);
 }

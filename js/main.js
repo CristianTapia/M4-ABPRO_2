@@ -2,7 +2,15 @@ import { Equipo } from "./classes/Equipo.js";
 import { Jugador } from "./classes/Jugador.js";
 import { Torneo } from "./classes/Torneo.js";
 
+/*---------------------------------------
+-               Interfaz                -
+---------------------------------------*/
+
 // Crear torneo
+let nuevoTorneo;
+let nuevoEquipo;
+let nuevoJugador;
+
 let crearTorneo = document.getElementsByClassName('input-torneo');
 let btnCrear = document.getElementById('btn-crear');
 btnCrear.addEventListener('click', creacionTorneo);
@@ -12,7 +20,7 @@ function creacionTorneo() {
     for(let i = 0; i < crearTorneo.length; i++) {
         let llenarArreglo = datosTorneo.push(crearTorneo[i].value);
     }
-    let nuevoTorneo = new Torneo(datosTorneo[0], datosTorneo[1], datosTorneo[2], datosTorneo[3]);
+    nuevoTorneo = new Torneo(datosTorneo[0], datosTorneo[1], datosTorneo[2], datosTorneo[3]);
     console.log(nuevoTorneo);
 }
 
@@ -27,7 +35,8 @@ function inscribirEquipo() {
         let llenarArreglo = datosEquipo.push(agregarEquipo[i].value);
         
     }
-    let nuevoEquipo = new Equipo(datosEquipo[0], datosEquipo[1]);
+    nuevoEquipo = new Equipo(datosEquipo[0], datosEquipo[1]);
+    nuevoTorneo.anadirEquipo(nuevoEquipo);
     console.log(nuevoEquipo);
 }
 
@@ -41,6 +50,10 @@ function inscribirJugador() {
     for(let i = 0; i < agregarJugador.length; i++) {
         let llenarArreglo = datosJugador.push(agregarJugador[i].value);
     }
-    let nuevoJugador = new Jugador(datosJugador[0], datosJugador[1], datosJugador[2], datosJugador[3]);
+    
+    nuevoJugador = new Jugador(datosJugador[0], datosJugador[1], datosJugador[2], datosJugador[3]);
+    
+    nuevoEquipo.anadirJugador(nuevoJugador)
+
     console.log(nuevoJugador);
 }
